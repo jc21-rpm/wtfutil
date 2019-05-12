@@ -23,8 +23,8 @@ deployments. See who’s away in BambooHR, which Jira tickets are assigned to yo
 time it is in Barcelona. It even has weather. And clocks. And emoji.
 
 %prep
-wget https://github.com/%{gh_user}/%{name}/archive/%{version}.tar.gz
-tar xzf %{version}.tar.gz
+wget https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
+tar xzf v%{version}.tar.gz
 mkdir -p %{_builddir}/src/github.com/%{gh_user}/
 cd %{_builddir}/src/github.com/%{gh_user}/
 mv %{_builddir}/%{name}-%{version} %{name}
