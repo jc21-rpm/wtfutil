@@ -1,11 +1,12 @@
 %define debug_package %{nil}
 
 %global gh_user     wtfutil
-%global gh_commit   b07f3c5e6780967f67574a96ba984bb9b7f3beaf
+%global gh_name     wtf
+%global gh_commit   76545d196b4afd52dbd934e7a67c3840b2b393ef
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
 
-Name:           wtf
-Version:        0.14.0
+Name:           wtfutil
+Version:        0.15.0
 Release:        1%{?dist}
 Summary:        A personal terminal-based dashboard utility, designed for displaying infrequently-needed, but very important, daily data.
 Group:          Applications/System
@@ -23,34 +24,30 @@ deployments. See who’s away in BambooHR, which Jira tickets are assigned to yo
 time it is in Barcelona. It even has weather. And clocks. And emoji.
 
 %prep
-wget https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
+wget https://github.com/%{gh_user}/%{gh_name}/archive/v%{version}.tar.gz
 tar xzf v%{version}.tar.gz
 mkdir -p %{_builddir}/src/github.com/%{gh_user}/
 cd %{_builddir}/src/github.com/%{gh_user}/
-mv %{_builddir}/%{name}-%{version} %{name}
-mkdir -p %{_builddir}/%{name}-%{version}
-cd %{name}
+mv %{_builddir}/%{gh_name}-%{version} %{gh_name}
+mkdir -p %{_builddir}/%{gh_name}-%{version}
+cd %{gh_name}
 
 %build
 export GOPATH="%{_builddir}"
 export PATH=$PATH:"%{_builddir}"/bin
-#go get -u github.com/golang/dep/cmd/dep
-cd %{_builddir}/src/github.com/%{gh_user}/%{name}
-#%{_builddir}/bin/dep ensure
-
+cd %{_builddir}/src/github.com/%{gh_user}/%{gh_name}
 make
 
-# build:
-#mkdir -p bin/linux
-#GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -tags release -ldflags "-X github.com/liamg/aminal/version.Version=%{version} -X main.build=%{gh_short}" -o %{_builddir}/bin/%{name}
-
 %install
-install -Dm0755 %{_builddir}/src/github.com/%{gh_user}/%{name}/bin/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm0755 %{_builddir}/src/github.com/%{gh_user}/%{gh_name}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
 
 %changelog
+* Thu Jul 11 2019 Jamie Curnow <jc@jc21.com> 0.15.0-1
+- v0.15.0
+
 * Wed Jul 10 2019 Jamie Curnow <jc@jc21.com> 0.14.0-1
 - v0.14.0
 
