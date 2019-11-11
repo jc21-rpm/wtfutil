@@ -6,7 +6,7 @@
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
 
 Name:           wtfutil
-Version:        0.23.0
+Version:        0.24.0
 Release:        1%{?dist}
 Summary:        A personal terminal-based dashboard utility, designed for displaying infrequently-needed, but very important, daily data.
 Group:          Applications/System
@@ -45,6 +45,9 @@ install -Dm0755 %{_builddir}/src/github.com/%{gh_user}/%{gh_name}/bin/%{name} %{
 %{_bindir}/%{name}
 
 %changelog
+* Mon Nov 11 2019 Jamie Curnow <jc@jc21.com> 0.24.0-1
+- v0.24.0
+
 * Mon Oct 14 2019 Jamie Curnow <jc@jc21.com> 0.23.0-1
 - v0.23.0
 
