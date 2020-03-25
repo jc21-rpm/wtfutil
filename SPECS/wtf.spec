@@ -45,13 +45,13 @@ install -Dm0755 %{_builddir}/src/github.com/%{gh_user}/%{gh_name}/bin/%{name} %{
 %{_bindir}/%{name}
 
 %changelog
-* Mon Mar 16 2019 Jamie Curnow <jc@jc21.com> 0.28.0-1
+* Mon Mar 16 2020 Jamie Curnow <jc@jc21.com> 0.28.0-1
 - v0.28.0
 
-* Mon Feb 24 2019 Jamie Curnow <jc@jc21.com> 0.27.0-1
+* Mon Feb 24 2020 Jamie Curnow <jc@jc21.com> 0.27.0-1
 - v0.27.0
 
-* Wed Feb 5 2019 Jamie Curnow <jc@jc21.com> 0.26.0-1
+* Wed Feb 5 2020 Jamie Curnow <jc@jc21.com> 0.26.0-1
 - v0.26.0
 
 * Sat Dec 14 2019 Jamie Curnow <jc@jc21.com> 0.25.0-1
