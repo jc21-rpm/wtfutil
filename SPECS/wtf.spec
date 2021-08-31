@@ -12,6 +12,7 @@ Summary:        A personal terminal-based dashboard utility, designed for displa
 Group:          Applications/System
 License:        GNU
 URL:            https://github.com/wtfutil/wtf
+Source:         https://github.com/%{gh_user}/%{gh_name}/archive/v%{version}.tar.gz
 BuildRequires:  golang
 
 %description
@@ -24,22 +25,13 @@ deployments. See who’s away in BambooHR, which Jira tickets are assigned to yo
 time it is in Barcelona. It even has weather. And clocks. And emoji.
 
 %prep
-wget https://github.com/%{gh_user}/%{gh_name}/archive/v%{version}.tar.gz
-tar xzf v%{version}.tar.gz
-mkdir -p %{_builddir}/src/github.com/%{gh_user}/
-cd %{_builddir}/src/github.com/%{gh_user}/
-mv %{_builddir}/%{gh_name}-%{version} %{gh_name}
-mkdir -p %{_builddir}/%{gh_name}-%{version}
-cd %{gh_name}
+%setup -q -n wtf-%{version}
 
 %build
-export GOPATH="%{_builddir}"
-export PATH=$PATH:"%{_builddir}"/bin
-cd %{_builddir}/src/github.com/%{gh_user}/%{gh_name}
 make
 
 %install
-install -Dm0755 %{_builddir}/src/github.com/%{gh_user}/%{gh_name}/bin/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm0755 %{_builddir}/bin/wtf %{buildroot}%{_bindir}/wtf
 
 %files
 %{_bindir}/%{name}
