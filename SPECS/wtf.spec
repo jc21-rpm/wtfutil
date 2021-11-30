@@ -31,7 +31,7 @@ time it is in Barcelona. It even has weather. And clocks. And emoji.
 make
 
 %install
-install -Dm0755 %{_builddir}/bin/wtf %{buildroot}%{_bindir}/wtf
+install -Dm0755 bin/wtfutil %{buildroot}%{_bindir}/wtfutil
 
 %files
 %{_bindir}/%{name}
