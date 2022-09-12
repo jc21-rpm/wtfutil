@@ -7,7 +7,7 @@
 
 Name:           wtfutil
 Version:        0.40.0
-Release:        1%{?dist}
+Release:        1
 Summary:        A personal terminal-based dashboard utility, designed for displaying infrequently-needed, but very important, daily data.
 Group:          Applications/System
 License:        GNU
