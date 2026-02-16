@@ -2,11 +2,11 @@
 
 %global gh_user     wtfutil
 %global gh_name     wtf
-%global gh_commit   ea7f6ed1ce0e3a96c7ce7aa337bfdae9cfc27a93
+%global gh_commit   6f433da256381dedec2f0d8dd21a5cb368659788
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
 
 Name:           wtfutil
-Version:        0.43.0
+Version:        0.49.0
 Release:        1%{?dist}
 Summary:        A personal terminal-based dashboard utility, designed for displaying infrequently-needed, but very important, daily data.
 Group:          Applications/System
@@ -37,6 +37,9 @@ install -Dm0755 bin/wtfutil %{buildroot}%{_bindir}/wtfutil
 %{_bindir}/%{name}
 
 %changelog
+* Mon Feb 16 2026 Jamie Curnow <jc@jc21.com> 0.49.0-1
+- v0.49.0
+
 * Tue Jun 25 2024 Jamie Curnow <jc@jc21.com> 0.43.0-1
 - v0.43.0
 
