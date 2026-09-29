@@ -3,6 +3,6 @@
   "publish": {
     "PACKAGE": "wtf",
     "GH_USER": "jc21-rpm",
-    "VERSION": "0.50.0"
+    "VERSION": "0.51.0"
   }
 }
